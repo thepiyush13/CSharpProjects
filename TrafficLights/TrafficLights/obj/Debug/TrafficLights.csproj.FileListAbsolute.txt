@@ -1,0 +1,9 @@
+H:\STUDY\601Projects\TrafficLights\TrafficLights\bin\Debug\TrafficLights.exe.config
+H:\STUDY\601Projects\TrafficLights\TrafficLights\bin\Debug\TrafficLights.exe
+H:\STUDY\601Projects\TrafficLights\TrafficLights\bin\Debug\TrafficLights.pdb
+H:\STUDY\601Projects\TrafficLights\TrafficLights\obj\Debug\TrafficLights.csprojResolveAssemblyReference.cache
+H:\STUDY\601Projects\TrafficLights\TrafficLights\obj\Debug\TrafficLights.frmTrafficLights.resources
+H:\STUDY\601Projects\TrafficLights\TrafficLights\obj\Debug\TrafficLights.Properties.Resources.resources
+H:\STUDY\601Projects\TrafficLights\TrafficLights\obj\Debug\TrafficLights.csproj.GenerateResource.Cache
+H:\STUDY\601Projects\TrafficLights\TrafficLights\obj\Debug\TrafficLights.exe
+H:\STUDY\601Projects\TrafficLights\TrafficLights\obj\Debug\TrafficLights.pdb

@@ -1,0 +1,9 @@
+H:\STUDY\601Projects\PushMagic\PushMagic\bin\Debug\PushMagic.exe.config
+H:\STUDY\601Projects\PushMagic\PushMagic\bin\Debug\PushMagic.exe
+H:\STUDY\601Projects\PushMagic\PushMagic\bin\Debug\PushMagic.pdb
+H:\STUDY\601Projects\PushMagic\PushMagic\obj\Debug\PushMagic.csprojResolveAssemblyReference.cache
+H:\STUDY\601Projects\PushMagic\PushMagic\obj\Debug\PushMagic.frmPushMe.resources
+H:\STUDY\601Projects\PushMagic\PushMagic\obj\Debug\PushMagic.Properties.Resources.resources
+H:\STUDY\601Projects\PushMagic\PushMagic\obj\Debug\PushMagic.csproj.GenerateResource.Cache
+H:\STUDY\601Projects\PushMagic\PushMagic\obj\Debug\PushMagic.exe
+H:\STUDY\601Projects\PushMagic\PushMagic\obj\Debug\PushMagic.pdb

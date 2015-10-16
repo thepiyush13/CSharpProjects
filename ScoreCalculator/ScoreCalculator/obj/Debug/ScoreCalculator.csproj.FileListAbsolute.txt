@@ -1,0 +1,9 @@
+H:\STUDY\601Projects\ScoreCalculator\ScoreCalculator\bin\Debug\ScoreCalculator.exe.config
+H:\STUDY\601Projects\ScoreCalculator\ScoreCalculator\bin\Debug\ScoreCalculator.exe
+H:\STUDY\601Projects\ScoreCalculator\ScoreCalculator\bin\Debug\ScoreCalculator.pdb
+H:\STUDY\601Projects\ScoreCalculator\ScoreCalculator\obj\Debug\ScoreCalculator.csprojResolveAssemblyReference.cache
+H:\STUDY\601Projects\ScoreCalculator\ScoreCalculator\obj\Debug\ScoreCalculator.frmScoreCalculator.resources
+H:\STUDY\601Projects\ScoreCalculator\ScoreCalculator\obj\Debug\ScoreCalculator.Properties.Resources.resources
+H:\STUDY\601Projects\ScoreCalculator\ScoreCalculator\obj\Debug\ScoreCalculator.csproj.GenerateResource.Cache
+H:\STUDY\601Projects\ScoreCalculator\ScoreCalculator\obj\Debug\ScoreCalculator.exe
+H:\STUDY\601Projects\ScoreCalculator\ScoreCalculator\obj\Debug\ScoreCalculator.pdb

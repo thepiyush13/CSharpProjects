@@ -1,0 +1,9 @@
+H:\STUDY\601Projects\TaxCalculator\TaxCalculator\bin\Debug\TaxCalculator.exe.config
+H:\STUDY\601Projects\TaxCalculator\TaxCalculator\bin\Debug\TaxCalculator.exe
+H:\STUDY\601Projects\TaxCalculator\TaxCalculator\bin\Debug\TaxCalculator.pdb
+H:\STUDY\601Projects\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.csprojResolveAssemblyReference.cache
+H:\STUDY\601Projects\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.frmTaxCalc.resources
+H:\STUDY\601Projects\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.Properties.Resources.resources
+H:\STUDY\601Projects\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.csproj.GenerateResource.Cache
+H:\STUDY\601Projects\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.exe
+H:\STUDY\601Projects\TaxCalculator\TaxCalculator\obj\Debug\TaxCalculator.pdb

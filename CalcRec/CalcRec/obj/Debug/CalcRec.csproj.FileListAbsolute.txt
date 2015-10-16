@@ -1,0 +1,9 @@
+H:\STUDY\601Projects\CalcRec\CalcRec\bin\Debug\CalcRec.exe.config
+H:\STUDY\601Projects\CalcRec\CalcRec\bin\Debug\CalcRec.exe
+H:\STUDY\601Projects\CalcRec\CalcRec\bin\Debug\CalcRec.pdb
+H:\STUDY\601Projects\CalcRec\CalcRec\obj\Debug\CalcRec.csprojResolveAssemblyReference.cache
+H:\STUDY\601Projects\CalcRec\CalcRec\obj\Debug\CalcRec.frmCalc.resources
+H:\STUDY\601Projects\CalcRec\CalcRec\obj\Debug\CalcRec.Properties.Resources.resources
+H:\STUDY\601Projects\CalcRec\CalcRec\obj\Debug\CalcRec.csproj.GenerateResource.Cache
+H:\STUDY\601Projects\CalcRec\CalcRec\obj\Debug\CalcRec.exe
+H:\STUDY\601Projects\CalcRec\CalcRec\obj\Debug\CalcRec.pdb
