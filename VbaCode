@@ -1,0 +1,230 @@
+Public longText As String
+
+
+Sub CLeanANDSort()
+'
+' CLeanANDSort Macro
+' Removed NULL and sorts by Year,PSC,HIghSchool,LastName,FirstName
+'
+Dim colName As String, MyCol As Long, logText As String
+Application.ScreenUpdating = False
+Application.DisplayAlerts = False
+Application.DisplayStatusBar = True
+colName = "BannerID"
+Cells.Select
+' Sort
+DisplayStatus ("  Sorting...")
+ActiveWorkbook.ActiveSheet.Sort.SortFields.Clear
+Call SortByName("Year")
+Call SortByName("PSC")
+Call SortByName("HighSchool")
+Call SortByName("LastName")
+Call SortByName("FirstName")
+'apply Sorting now
+Call SortByName("", 1)
+DisplayStatus ("Done, ")
+'Remove Duplicates
+
+DisplayStatus ("Cleaning Dups...")
+MyCol = Application.Match(colName, Rows(1), 0)
+Range(Cells.Address).RemoveDuplicates Columns:=MyCol, Header:=xlYes
+DisplayStatus ("Done")
+'Replace NULLS
+DisplayStatus (" , Cleaning NULLS...")
+Selection.Replace What:="NULL", Replacement:="", LookAt:=xlWhole, SearchOrder:=xlByRows, MatchCase:=True, SearchFormat:=False, ReplaceFormat:=False
+DisplayStatus ("Done")
+
+
+Application.ScreenUpdating = True
+Application.DisplayAlerts = True
+End Sub
+Sub DisplayStatus(status As String)
+longText = longText + status
+Application.StatusBar = longText
+
+End Sub
+
+
+Sub SortByName(colName As String, Optional SortNow As Integer = 0)
+
+
+'Checking when to apply sorting
+If (colName = "") And (SortNow = 1) Then
+    With ActiveWorkbook.ActiveSheet.Sort
+        .SetRange ActiveCell.Range(Cells.Address)
+        .Header = xlYes
+        .MatchCase = True
+        .Orientation = xlTopToBottom
+        .SortMethod = xlPinYin
+        .Apply
+    End With
+Exit Sub
+End If
+
+' Add keys for SORTING the columns
+ActiveWorkbook.ActiveSheet.Sort.SortFields.Add Key:= _
+ActiveWorkbook.ActiveSheet.Range("1:1").Find(What:= _
+colName, MatchCase:=True), SortOn:=xlSortOnValues, Order:=xlAscending, DataOption:=xlSortNormal
+ 
+End Sub
+
+Sub ApplyTexas()
+'
+' ApplyTexas Macro
+'
+
+'
+    ActiveCell.Rows("1:2").EntireRow.Select
+    Selection.Delete Shift:=xlUp
+    
+    ActiveSheet.Cells.Select
+    ActiveSheet.Range("$A$1:$AN$15714").RemoveDuplicates Columns:=Array(1, 2, 11), _
+        Header:=xlYes
+    ActiveSheet.Range("$A$1:$AN$15714").RemoveDuplicates Columns:=Array(1, 2, 9), _
+        Header:=xlYes
+    ActiveSheet.Range("$A$1:$AN$15714").RemoveDuplicates Columns:=Array(1, 2, 3), _
+        Header:=xlYes
+End Sub
+
+
+Sub BigCopy()
+'
+' BigCopy Macro
+'
+
+'
+   
+Dim ws As Worksheet
+    Dim lRow As Long, lCol As Long
+    Dim rng As Range
+    Dim i As Long
+    i = 1
+    Dim count As Long
+    '~~> Set this to the relevant worksheet
+    Set ws = Sheets(1)
+    
+    Application.StatusBar = ""
+    
+    With ws
+        '~~> Get the last row and last column
+       
+        lRow = .Range("A" & .Rows.count).End(xlUp).Row
+        lCol = .Cells(1, .Columns.count).End(xlToLeft).Column
+        Application.StatusBar = "Copying " & lRow & " rows..."
+        'loop
+        Application.ScreenUpdating = False
+        While i <= (lRow + 1000)
+            Set rng = .Range(.Cells(i, 1), .Cells(i + 1000, lCol))
+            With rng
+                ActiveWindow.ActivateNext
+                rng.Copy ActiveSheet.Cells(i, 1)
+                ActiveWindow.ActivateNext
+            End With
+            i = i + 1000
+        Wend
+
+        '~~> Set the range
+        
+    End With
+    Application.ScreenUpdating = True
+    Application.StatusBar = "Copied " & lRow & " rows!!"
+End Sub
+
+Sub sheetToSqlSingleColumn()
+'
+' sheetToSqlSingleColumn Macro
+'
+
+'
+Dim colNum As Integer
+Dim lastRow As Long
+    'Windows("201531 Financial Aid Data.xlsx").Activate
+    Range("A3").Select
+    Range(Selection, ActiveCell.SpecialCells(xlLastCell)).Select
+    Selection.ClearContents
+    
+    ActiveWindow.ActivateNext
+    'Windows("2015 Applicants Financial Aid Data Report_20150827_085425.csv"). _
+        Activate
+    Range("A1").Select
+    ActiveSheet.Cells.RemoveDuplicates Columns:=2, Header:= _
+        xlYes
+    Range("A2").Select
+    Range(Selection, ActiveCell.SpecialCells(xlLastCell)).Select
+    Selection.Copy
+    
+    
+    'Windows("201531 Financial Aid Data.xlsx").Activate
+    ActiveWindow.ActivateNext
+    Range("A3").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+    ActiveCell.SpecialCells(xlLastCell).Select
+    
+    colNum = Application.Match("*SQL*", Range("1:1"), 0)
+    'Range(Selection, ActiveCell.Offset(columnOffset:=-2)).Select
+    lastRow = ActiveSheet.UsedRange.Rows.count
+    Range(Cells(2, colNum), Cells(lastRow, colNum + 2)).Select
+    'Selection.Offset(rowOffset:=1).Select
+    
+    Application.CutCopyMode = False
+    
+    Selection.FillDown
+    Rows("2:2").Select
+    Selection.Delete Shift:=xlUp
+    ActiveCell.SpecialCells(xlLastCell).Select
+    Range(Cells(2, colNum), Cells(lastRow, colNum)).Select
+    Selection.Copy
+    
+End Sub
+
+Sub sheetToSqlMultipleColumn()
+'
+' for more than one column Macro
+'
+
+'
+Dim colNum As Integer
+Dim lastRow As Long
+    'Windows("201531 Financial Aid Data.xlsx").Activate
+    Range("A3").Select
+    Range(Selection, ActiveCell.SpecialCells(xlLastCell)).Select
+    Selection.ClearContents
+    
+    ActiveWindow.ActivateNext
+    'Windows("2015 Applicants Financial Aid Data Report_20150827_085425.csv"). _
+        Activate
+    Range("A1").Select
+    ActiveSheet.Cells.RemoveDuplicates Columns:=2, Header:= _
+        xlYes
+    Range("A2").Select
+    Range(Selection, ActiveCell.SpecialCells(xlLastCell)).Select
+    Selection.Copy
+    
+    
+    'Windows("201531 Financial Aid Data.xlsx").Activate
+    ActiveWindow.ActivateNext
+    Range("A3").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+    ActiveCell.SpecialCells(xlLastCell).Select
+    
+    colNum = Application.Match("*SQL*", Range("1:1"), 0)
+    'Range(Selection, ActiveCell.Offset(columnOffset:=-2)).Select
+    lastRow = ActiveSheet.UsedRange.Rows.count
+    Range(Cells(2, colNum), Cells(lastRow, colNum + 2)).Select
+    'Selection.Offset(rowOffset:=1).Select
+    
+    Application.CutCopyMode = False
+    
+    Selection.FillDown
+    Rows("2:2").Select
+    Selection.Delete Shift:=xlUp
+    ActiveCell.SpecialCells(xlLastCell).Select
+    Range(Cells(2, colNum), Cells(lastRow, colNum)).Select
+    Selection.Copy
+    
+End Sub
+
